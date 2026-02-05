@@ -25,7 +25,7 @@
       ],
       "priority": 1,
       "passes": false,
-      "github_issue": null
+      "github_issue": 1
     },
     {
       "id": "F002",
@@ -50,7 +50,7 @@
       ],
       "priority": 2,
       "passes": false,
-      "github_issue": null
+      "github_issue": 2
     },
     {
       "id": "F003",
@@ -75,7 +75,7 @@
       ],
       "priority": 3,
       "passes": false,
-      "github_issue": null
+      "github_issue": 3
     },
     {
       "id": "F004",
@@ -99,7 +99,7 @@
       ],
       "priority": 4,
       "passes": false,
-      "github_issue": null
+      "github_issue": 4
     },
     {
       "id": "F005",
@@ -124,7 +124,7 @@
       ],
       "priority": 5,
       "passes": false,
-      "github_issue": null
+      "github_issue": 5
     },
     {
       "id": "F006",
@@ -150,7 +150,7 @@
       ],
       "priority": 6,
       "passes": false,
-      "github_issue": null
+      "github_issue": 6
     },
     {
       "id": "F007",
@@ -173,7 +173,7 @@
       ],
       "priority": 7,
       "passes": false,
-      "github_issue": null
+      "github_issue": 7
     },
     {
       "id": "F008",
@@ -201,7 +201,7 @@
       ],
       "priority": 8,
       "passes": false,
-      "github_issue": null
+      "github_issue": 8
     },
     {
       "id": "F009",
@@ -227,7 +227,7 @@
       ],
       "priority": 9,
       "passes": false,
-      "github_issue": null
+      "github_issue": 9
     },
     {
       "id": "F010",
@@ -252,7 +252,7 @@
       ],
       "priority": 10,
       "passes": false,
-      "github_issue": null
+      "github_issue": 10
     },
     {
       "id": "F011",
@@ -276,7 +276,7 @@
       ],
       "priority": 11,
       "passes": false,
-      "github_issue": null
+      "github_issue": 11
     },
     {
       "id": "F012",
@@ -299,7 +299,7 @@
       ],
       "priority": 12,
       "passes": false,
-      "github_issue": null
+      "github_issue": 12
     },
     {
       "id": "F013",
@@ -323,7 +323,7 @@
       ],
       "priority": 13,
       "passes": false,
-      "github_issue": null
+      "github_issue": 13
     },
     {
       "id": "F014",
@@ -349,7 +349,7 @@
       ],
       "priority": 14,
       "passes": false,
-      "github_issue": null
+      "github_issue": 14
     },
     {
       "id": "F015",
@@ -374,7 +374,7 @@
       ],
       "priority": 15,
       "passes": false,
-      "github_issue": null
+      "github_issue": 15
     },
     {
       "id": "F016",
@@ -398,7 +398,7 @@
       ],
       "priority": 16,
       "passes": false,
-      "github_issue": null
+      "github_issue": 16
     },
     {
       "id": "F017",
@@ -420,7 +420,7 @@
       ],
       "priority": 17,
       "passes": false,
-      "github_issue": null
+      "github_issue": 17
     },
     {
       "id": "F018",
@@ -444,7 +444,7 @@
       ],
       "priority": 18,
       "passes": false,
-      "github_issue": null
+      "github_issue": 18
     },
     {
       "id": "F019",
@@ -467,7 +467,7 @@
       ],
       "priority": 19,
       "passes": false,
-      "github_issue": null
+      "github_issue": 19
     },
     {
       "id": "F020",
@@ -498,7 +498,7 @@
       ],
       "priority": 20,
       "passes": false,
-      "github_issue": null
+      "github_issue": 20
     },
     {
       "id": "F021",
@@ -527,7 +527,7 @@
       ],
       "priority": 21,
       "passes": false,
-      "github_issue": null
+      "github_issue": 21
     },
     {
       "id": "F022",
@@ -552,7 +552,7 @@
       ],
       "priority": 22,
       "passes": false,
-      "github_issue": null
+      "github_issue": 22
     },
     {
       "id": "F023",
@@ -576,7 +576,7 @@
       ],
       "priority": 23,
       "passes": false,
-      "github_issue": null
+      "github_issue": 23
     },
     {
       "id": "F024",
@@ -599,7 +599,7 @@
       ],
       "priority": 24,
       "passes": false,
-      "github_issue": null
+      "github_issue": 24
     },
     {
       "id": "F025",
@@ -621,7 +621,7 @@
       ],
       "priority": 25,
       "passes": false,
-      "github_issue": null
+      "github_issue": 25
     },
     {
       "id": "F026",
@@ -644,7 +644,7 @@
       ],
       "priority": 26,
       "passes": false,
-      "github_issue": null
+      "github_issue": 26
     }
   ]
 }
