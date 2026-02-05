@@ -1,0 +1,650 @@
+{
+  "project": "sleep02",
+  "created_at": "2025-02-05",
+  "github_repo": "https://github.com/LQY-920/sleep02",
+  "features": [
+    {
+      "id": "F001",
+      "category": "setup",
+      "title": "Project initialization and basic setup",
+      "description": "Initialize the project with Next.js, TypeScript, MySQL 8, and Taro framework setup",
+      "acceptance_criteria": [
+        "Next.js project created with TypeScript",
+        "MySQL 8 database connection configured",
+        "Taro mini program framework setup",
+        "Basic project structure with frontend, backend, miniapp, and shared directories"
+      ],
+      "implementation_constraints": [
+        "Use Node.js 18+",
+        "Follow modern best practices for Next.js and TypeScript"
+      ],
+      "related_modules": ["frontend", "backend", "miniapp", "shared"],
+      "test_requirements": [
+        "Project can build without errors",
+        "Development server starts successfully"
+      ],
+      "priority": 1,
+      "passes": false,
+      "github_issue": null
+    },
+    {
+      "id": "F002",
+      "category": "feature",
+      "title": "User profile management",
+      "description": "Allow users to set personal information including nickname, avatar, tags, and motto",
+      "acceptance_criteria": [
+        "User can set and edit nickname",
+        "User can upload and change avatar",
+        "User can set personal tags",
+        "User can set personal motto",
+        "User profile is persisted in database"
+      ],
+      "implementation_constraints": [
+        "Use secure file upload for avatars",
+        "Validate input data"
+      ],
+      "related_modules": ["frontend", "backend", "miniapp"],
+      "test_requirements": [
+        "Profile can be created and updated",
+        "Avatar upload works correctly"
+      ],
+      "priority": 2,
+      "passes": false,
+      "github_issue": null
+    },
+    {
+      "id": "F003",
+      "category": "feature",
+      "title": "Friend code generation and binding",
+      "description": "Generate unique friend code for each user and allow users to bind via friend codes",
+      "acceptance_criteria": [
+        "Each user gets a unique friend code",
+        "User can view their own friend code",
+        "User can input another user's friend code to send friend request",
+        "Both users are notified when friendship is established",
+        "Friend list is displayed without limit"
+      ],
+      "implementation_constraints": [
+        "Friend code must be unique",
+        "Handle duplicate friend requests gracefully"
+      ],
+      "related_modules": ["backend", "miniapp"],
+      "test_requirements": [
+        "Friend codes are unique",
+        "Friend binding works bidirectionally"
+      ],
+      "priority": 3,
+      "passes": false,
+      "github_issue": null
+    },
+    {
+      "id": "F004",
+      "category": "feature",
+      "title": "Check-in time settings",
+      "description": "Allow users to customize morning and evening check-in time periods",
+      "acceptance_criteria": [
+        "User can set morning check-in time period (e.g., 6:00-9:00)",
+        "User can set evening check-in time period (e.g., 21:00-23:00)",
+        "Settings are persisted",
+        "Check-in is only allowed within configured time periods"
+      ],
+      "implementation_constraints": [
+        "Validate time period format",
+        "Morning time must be before evening time"
+      ],
+      "related_modules": ["backend", "miniapp"],
+      "test_requirements": [
+        "Check-in works within time period",
+        "Check-in is rejected outside time period"
+      ],
+      "priority": 4,
+      "passes": false,
+      "github_issue": null
+    },
+    {
+      "id": "F005",
+      "category": "feature",
+      "title": "Accounting - Income/expense recording",
+      "description": "Record daily income and expenses with amount, category, and notes",
+      "acceptance_criteria": [
+        "User can record income with amount, category, and notes",
+        "User can record expense with amount, category, and notes",
+        "Default categories: Dining, Transport, Shopping",
+        "User can create custom categories",
+        "Records are saved with timestamp"
+      ],
+      "implementation_constraints": [
+        "Amount must be positive number",
+        "Category cannot be empty"
+      ],
+      "related_modules": ["backend", "miniapp"],
+      "test_requirements": [
+        "Income/expense records are saved correctly",
+        "Custom categories can be created, edited, deleted"
+      ],
+      "priority": 5,
+      "passes": false,
+      "github_issue": null
+    },
+    {
+      "id": "F006",
+      "category": "feature",
+      "title": "Accounting statistics and charts",
+      "description": "Display income/expense statistics with daily/weekly/monthly views and chart visualizations",
+      "acceptance_criteria": [
+        "Daily view: show today's income/expense/balance",
+        "Weekly view: show week's income/expense/balance",
+        "Monthly view: show month's income/expense/balance",
+        "Support bar chart, line chart, pie chart",
+        "Show category breakdown in charts",
+        "Display transaction detail list"
+      ],
+      "implementation_constraints": [
+        "Charts must be responsive",
+        "Data must be calculated accurately"
+      ],
+      "related_modules": ["frontend", "backend", "miniapp"],
+      "test_requirements": [
+        "Statistics are accurate",
+        "Charts render correctly on different screen sizes"
+      ],
+      "priority": 6,
+      "passes": false,
+      "github_issue": null
+    },
+    {
+      "id": "F007",
+      "category": "feature",
+      "title": "Monthly budget setting and alerts",
+      "description": "Set monthly budget and alert when over budget",
+      "acceptance_criteria": [
+        "User can set monthly budget amount",
+        "Budget progress bar is shown in monthly view",
+        "Alert is shown when expenses exceed budget",
+        "Budget setting is persisted"
+      ],
+      "implementation_constraints": [
+        "Budget must be positive number"
+      ],
+      "related_modules": ["backend", "miniapp"],
+      "test_requirements": [
+        "Budget alert triggers correctly",
+        "Progress bar shows accurate percentage"
+      ],
+      "priority": 7,
+      "passes": false,
+      "github_issue": null
+    },
+    {
+      "id": "F008",
+      "category": "feature",
+      "title": "Daily check-in with AI motivation",
+      "description": "Morning and evening check-in with AI-generated positive motivation quotes",
+      "acceptance_criteria": [
+        "User can check in during configured time periods",
+        "Check-in shows success animation",
+        "AI-generated motivation quote is displayed after check-in",
+        "Quote content is different each time",
+        "Quote style matches check-in type (morning/evening)",
+        "Quote considers streak days",
+        "Quote card can be shared"
+      ],
+      "implementation_constraints": [
+        "Use Google AI Gemini for text generation",
+        "Ensure quotes are positive and encouraging"
+      ],
+      "related_modules": ["backend", "miniapp"],
+      "test_requirements": [
+        "Check-in records are saved",
+        "AI quotes are generated successfully",
+        "Streak days are calculated correctly"
+      ],
+      "priority": 8,
+      "passes": false,
+      "github_issue": null
+    },
+    {
+      "id": "F009",
+      "category": "feature",
+      "title": "Plan management (Pet feeding / Plant watering)",
+      "description": "Create daily plans for pet feeding or plant watering that need to be checked daily",
+      "acceptance_criteria": [
+        "User can create plans (pet feeding or plant watering)",
+        "User can set plan name",
+        "Multiple plans can be created",
+        "Each plan needs to be checked once daily",
+        "Plan status resets daily (completed/pending)",
+        "Plan status is visible to friends"
+      ],
+      "implementation_constraints": [
+        "Plan type must be either pet or plant",
+        "Plan name cannot be empty"
+      ],
+      "related_modules": ["backend", "miniapp"],
+      "test_requirements": [
+        "Plans can be created and deleted",
+        "Daily status resets correctly"
+      ],
+      "priority": 9,
+      "passes": false,
+      "github_issue": null
+    },
+    {
+      "id": "F010",
+      "category": "feature",
+      "title": "Social - Help friend check in",
+      "description": "Allow friends to help check in each other's plans",
+      "acceptance_criteria": [
+        "User can view friend's plan list",
+        "User can help friend check in incomplete plans",
+        "Friend receives notification when helped",
+        "Notification content is AI-generated with helper's name",
+        "Help action is recorded"
+      ],
+      "implementation_constraints": [
+        "Only friends can help",
+        "Can only help incomplete plans"
+      ],
+      "related_modules": ["backend", "miniapp"],
+      "test_requirements": [
+        "Help action works correctly",
+        "Notification is generated and sent"
+      ],
+      "priority": 10,
+      "passes": false,
+      "github_issue": null
+    },
+    {
+      "id": "F011",
+      "category": "feature",
+      "title": "Home page - Friend activity feed",
+      "description": "Display friend activities including check-ins and plan status on home page",
+      "acceptance_criteria": [
+        "Show friend avatar, nickname, and recent activities",
+        "Display plan status with icon (pet/plant + completed/pending)",
+        "Click on friend activity to view friend details",
+        "Activities are sorted by time"
+      ],
+      "implementation_constraints": [
+        "Only show friends' activities",
+        "Privacy: only show plan status, not financial data"
+      ],
+      "related_modules": ["backend", "miniapp"],
+      "test_requirements": [
+        "Activity feed updates in real-time",
+        "Navigation to friend details works"
+      ],
+      "priority": 11,
+      "passes": false,
+      "github_issue": null
+    },
+    {
+      "id": "F012",
+      "category": "feature",
+      "title": "Bottom tab navigation (5 pages)",
+      "description": "Implement bottom tab navigation with 5 pages: Home, Accounting, Check-in, Plans, Profile",
+      "acceptance_criteria": [
+        "5 tabs: Home, Accounting, Check-in, Plans, Profile",
+        "Each tab shows corresponding page",
+        "Active tab is highlighted",
+        "Navigation is smooth and responsive"
+      ],
+      "implementation_constraints": [
+        "Follow mini-program UI guidelines"
+      ],
+      "related_modules": ["miniapp"],
+      "test_requirements": [
+        "All tabs navigate correctly",
+        "Active state is visible"
+      ],
+      "priority": 12,
+      "passes": false,
+      "github_issue": null
+    },
+    {
+      "id": "F013",
+      "category": "feature",
+      "title": "Home page UI",
+      "description": "Implement home page with user info, daily finance overview, and friend activity feed",
+      "acceptance_criteria": [
+        "Top: User avatar + nickname + today's check-in status",
+        "Middle: Daily finance overview card (income/expense/balance)",
+        "Bottom: Friend activity list",
+        "Each activity shows friend avatar, nickname, activity type, plan status"
+      ],
+      "implementation_constraints": [
+        "UI must be responsive",
+        "Follow design specifications"
+      ],
+      "related_modules": ["miniapp"],
+      "test_requirements": [
+        "Page renders correctly",
+        "Data loads from backend"
+      ],
+      "priority": 13,
+      "passes": false,
+      "github_issue": null
+    },
+    {
+      "id": "F014",
+      "category": "feature",
+      "title": "Accounting page UI",
+      "description": "Implement accounting page with income/expense switch, amount input, category selection, and notes",
+      "acceptance_criteria": [
+        "Top: Income/expense tab switcher",
+        "Middle: Large number keyboard + amount display",
+        "Category selection: preset icons + custom category (+ button)",
+        "Notes input field",
+        "Bottom: Confirm button",
+        "Top right: Statistics entry icon"
+      ],
+      "implementation_constraints": [
+        "Keyboard must be easy to use",
+        "Categories must be clearly visible"
+      ],
+      "related_modules": ["miniapp"],
+      "test_requirements": [
+        "Amount entry works smoothly",
+        "Category selection is intuitive"
+      ],
+      "priority": 14,
+      "passes": false,
+      "github_issue": null
+    },
+    {
+      "id": "F015",
+      "category": "feature",
+      "title": "Statistics page UI",
+      "description": "Implement statistics page with time range switch, chart types, and transaction list",
+      "acceptance_criteria": [
+        "Top: Time range switch (day/week/month)",
+        "Middle: Chart area with type switch (bar/line/pie)",
+        "Charts show category breakdown",
+        "Bottom: Transaction detail list",
+        "Budget progress bar (monthly view only)"
+      ],
+      "implementation_constraints": [
+        "Charts must be responsive",
+        "Data must load efficiently"
+      ],
+      "related_modules": ["miniapp"],
+      "test_requirements": [
+        "Charts display correctly",
+        "Time range switching works"
+      ],
+      "priority": 15,
+      "passes": false,
+      "github_issue": null
+    },
+    {
+      "id": "F016",
+      "category": "feature",
+      "title": "Check-in page UI",
+      "description": "Implement check-in page with morning/evening cards and AI motivation popup",
+      "acceptance_criteria": [
+        "Top: Current date + consecutive days",
+        "Middle: Morning check-in card (time range, button/status)",
+        "Middle: Evening check-in card (time range, button/status)",
+        "Check-in success popup: AI motivation card with share option"
+      ],
+      "implementation_constraints": [
+        "Popup design must be polished",
+        "Animation should be smooth"
+      ],
+      "related_modules": ["miniapp"],
+      "test_requirements": [
+        "Check-in works within time period",
+        "Popup shows correct content"
+      ],
+      "priority": 16,
+      "passes": false,
+      "github_issue": null
+    },
+    {
+      "id": "F017",
+      "category": "feature",
+      "title": "Plans page UI",
+      "description": "Implement plans page with plan list and add plan functionality",
+      "acceptance_criteria": [
+        "Top: 'My Plans' title + add button",
+        "Plan list: each card shows type icon (pet/plant), name, today's status, check-in button",
+        "Add plan popup: type selection, name input, confirm button"
+      ],
+      "implementation_constraints": [
+        "Plan cards must be clear"
+      ],
+      "related_modules": ["miniapp"],
+      "test_requirements": [
+        "Plans list correctly",
+        "Add plan works"
+      ],
+      "priority": 17,
+      "passes": false,
+      "github_issue": null
+    },
+    {
+      "id": "F018",
+      "category": "feature",
+      "title": "Profile page UI",
+      "description": "Implement profile page with user info, friend code, settings, and friend list",
+      "acceptance_criteria": [
+        "Top: Personal info card (avatar, nickname, tags, motto - all editable)",
+        "Friend code area: show my code + 'Add friend' button",
+        "Settings: check-in time, budget, category management",
+        "Friend list entry"
+      ],
+      "implementation_constraints": [
+        "Avatar click should open upload",
+        "All fields should be editable"
+      ],
+      "related_modules": ["miniapp"],
+      "test_requirements": [
+        "Profile can be edited",
+        "Friend code is visible"
+      ],
+      "priority": 18,
+      "passes": false,
+      "github_issue": null
+    },
+    {
+      "id": "F019",
+      "category": "feature",
+      "title": "Friend detail page UI",
+      "description": "Implement friend detail page with plan list and help check-in button",
+      "acceptance_criteria": [
+        "Top: Friend avatar, nickname, tags, motto",
+        "Middle: Friend's plan list (type, name, today's status)",
+        "Incomplete plans show 'Help Check-in' button",
+        "Help check-in success notification"
+      ],
+      "implementation_constraints": [
+        "Only show plan status, not financial data"
+      ],
+      "related_modules": ["miniapp"],
+      "test_requirements": [
+        "Page loads correctly",
+        "Help button works"
+      ],
+      "priority": 19,
+      "passes": false,
+      "github_issue": null
+    },
+    {
+      "id": "F020",
+      "category": "feature",
+      "title": "Database schema design and implementation",
+      "description": "Design and implement MySQL database schema for all features",
+      "acceptance_criteria": [
+        "Users table: id, nickname, avatar, tags, motto, friend_code, created_at",
+        "Friendships table: user_id, friend_id, created_at",
+        "Transactions table: id, user_id, type, amount, category, notes, created_at",
+        "Categories table: id, user_id, name, is_default",
+        "Check_ins table: id, user_id, type, streak_days, created_at",
+        "Plans table: id, user_id, type, name, created_at",
+        "Plan_checks table: id, plan_id, user_id, date, helper_id",
+        "Budgets table: id, user_id, amount, month",
+        "Settings table: id, user_id, morning_start, morning_end, evening_start, evening_end",
+        "Proper indexes and foreign keys"
+      ],
+      "implementation_constraints": [
+        "Use MySQL 8",
+        "Proper indexing for performance",
+        "Foreign key constraints"
+      ],
+      "related_modules": ["backend"],
+      "test_requirements": [
+        "Schema can be created without errors",
+        "Referential integrity is maintained"
+      ],
+      "priority": 20,
+      "passes": false,
+      "github_issue": null
+    },
+    {
+      "id": "F021",
+      "category": "feature",
+      "title": "API design and implementation",
+      "description": "Design and implement RESTful APIs for all features",
+      "acceptance_criteria": [
+        "User authentication and profile APIs",
+        "Friend management APIs",
+        "Transaction CRUD APIs",
+        "Category management APIs",
+        "Check-in APIs",
+        "Plan management APIs",
+        "Statistics and budget APIs",
+        "Proper error handling and validation"
+      ],
+      "implementation_constraints": [
+        "RESTful design",
+        "JWT authentication",
+        "Input validation"
+      ],
+      "related_modules": ["backend"],
+      "test_requirements": [
+        "All APIs return correct responses",
+        "Error handling works properly"
+      ],
+      "priority": 21,
+      "passes": false,
+      "github_issue": null
+    },
+    {
+      "id": "F022",
+      "category": "feature",
+      "title": "AI integration - Check-in motivation generation",
+      "description": "Integrate Google AI Gemini for generating check-in motivation quotes",
+      "acceptance_criteria": [
+        "API call to Gemini for morning check-in quotes",
+        "API call to Gemini for evening check-in quotes",
+        "Quotes are positive and encouraging",
+        "Quotes consider streak days",
+        "Fallback quotes if AI fails"
+      ],
+      "implementation_constraints": [
+        "Use Google AI Studio Gemini API",
+        "Implement caching to reduce API calls"
+      ],
+      "related_modules": ["backend"],
+      "test_requirements": [
+        "AI generates appropriate quotes",
+        "Fallback works when AI is unavailable"
+      ],
+      "priority": 22,
+      "passes": false,
+      "github_issue": null
+    },
+    {
+      "id": "F023",
+      "category": "feature",
+      "title": "AI integration - Help check-in notification generation",
+      "description": "Integrate AI for generating help check-in notification messages",
+      "acceptance_criteria": [
+        "Generate notification when friend helps with pet feeding",
+        "Generate notification when friend helps with plant watering",
+        "Include helper's nickname",
+        "Messages are cute and friendly"
+      ],
+      "implementation_constraints": [
+        "Use Google AI Studio Gemini API",
+        "Keep messages short and friendly"
+      ],
+      "related_modules": ["backend"],
+      "test_requirements": [
+        "Notifications are generated correctly",
+        "Fallback works when AI is unavailable"
+      ],
+      "priority": 23,
+      "passes": false,
+      "github_issue": null
+    },
+    {
+      "id": "F024",
+      "category": "feature",
+      "title": "Notification system",
+      "description": "Implement notification system for friend activities and help actions",
+      "acceptance_criteria": [
+        "Push notification when friend helps check-in",
+        "Notification shows helper and action",
+        "Notifications can be viewed in list",
+        "Notifications can be marked as read"
+      ],
+      "implementation_constraints": [
+        "Use mini-program notification API"
+      ],
+      "related_modules": ["backend", "miniapp"],
+      "test_requirements": [
+        "Notifications are sent correctly",
+        "Notification list updates in real-time"
+      ],
+      "priority": 24,
+      "passes": false,
+      "github_issue": null
+    },
+    {
+      "id": "F025",
+      "category": "improvement",
+      "title": "Unit tests for backend APIs",
+      "description": "Write comprehensive unit tests for all backend API endpoints",
+      "acceptance_criteria": [
+        "All API endpoints have unit tests",
+        "Tests cover success and error cases",
+        "Test coverage > 80%"
+      ],
+      "implementation_constraints": [
+        "Use Jest or similar testing framework"
+      ],
+      "related_modules": ["backend"],
+      "test_requirements": [
+        "All tests pass",
+        "Coverage report generated"
+      ],
+      "priority": 25,
+      "passes": false,
+      "github_issue": null
+    },
+    {
+      "id": "F026",
+      "category": "improvement",
+      "title": "Integration tests for mini-app",
+      "description": "Write integration tests for mini-app user flows",
+      "acceptance_criteria": [
+        "Test complete user registration flow",
+        "Test accounting entry flow",
+        "Test check-in flow",
+        "Test plan creation and check-in flow",
+        "Test friend binding flow"
+      ],
+      "implementation_constraints": [
+        "Use end-to-end testing framework for mini-programs"
+      ],
+      "related_modules": ["miniapp"],
+      "test_requirements": [
+        "All integration tests pass"
+      ],
+      "priority": 26,
+      "passes": false,
+      "github_issue": null
+    }
+  ]
+}
